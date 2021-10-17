@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import "./Header.css";
+import logo from "../../../images/logo3.svg";
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -16,8 +17,11 @@ const Header = () => {
             <Container>
                 <Navbar.Brand>
                     <NavLink to="/">
-                        {/* <img className="logo" src={logo} alt="logo" /> */}
-                        Logo
+                        <img
+                            className="logo text-white"
+                            src={logo}
+                            alt="logo"
+                        />
                     </NavLink>
                 </Navbar.Brand>
 
@@ -31,14 +35,14 @@ const Header = () => {
                         <NavLink activeStyle={activeStyle} to="/home">
                             Home
                         </NavLink>
-                        <NavLink activeStyle={activeStyle} to="/services">
-                            Services
-                        </NavLink>
                         <NavLink activeStyle={activeStyle} to="/about">
                             About us
                         </NavLink>
                         <NavLink activeStyle={activeStyle} to="/contact">
                             Contact us
+                        </NavLink>
+                        <NavLink activeStyle={activeStyle} to="/appointment">
+                            Appointment
                         </NavLink>
                     </Nav>
 
@@ -47,7 +51,7 @@ const Header = () => {
                             <NavLink to="/login">
                                 <button
                                     onClick={logOut}
-                                    className="home-button rounded-pill login-btn"
+                                    className="rounded-pill login-btn"
                                 >
                                     Log out
                                 </button>
@@ -56,7 +60,7 @@ const Header = () => {
                     ) : (
                         <div>
                             <NavLink to="/login">
-                                <button className="home-button rounded-pill login-btn">
+                                <button className="rounded-pill login-btn">
                                     Login
                                 </button>
                             </NavLink>

@@ -6,8 +6,8 @@ import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
-import Services from "./Pages/Home/Services/Services";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Appointment from "./Pages/Appointment/Appointment";
 
 function App() {
     return (
@@ -22,8 +22,8 @@ function App() {
                         <Route exact path="/home">
                             <Home />
                         </Route>
-                        <PrivateRoute exact path="/services">
-                            <Services />
+                        <PrivateRoute exact path="/appointment">
+                            <Appointment />
                         </PrivateRoute>
                         <Route exact path="/login">
                             <Login />
