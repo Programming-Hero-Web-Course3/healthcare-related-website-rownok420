@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "title": "Personalized Care Services",
+        "description": "We provide an exceptional blend of quality nursing and wellness services.Every year, more than a million people come to Mayo Clinic for care. Our highly specialized experts are deeply experienced in treating rare and complex conditions.",
+        "image": "https://i.ibb.co/GkCB089/s1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "In-Home Health Care",
+        "description": "It is a range of healthcare services that can be given in your home.Successful treatment starts with an accurate diagnosis, and our experts take the time to get it right. A team of specialists will listen to your needs and evaluate your condition from every angle to make the very best plan for you.",
+        "image": "https://i.ibb.co/ThGMZkN/s2.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Professional Medical Examination",
+        "description": "Medical examinations, on condition of its periodic passing, allows a person.At Mayo Clinic, every aspect of your care is coordinated and teams of experts work together to provide exactly the care you need. What might take months elsewhere can often be done in days here.",
+        "image": "https://i.ibb.co/bH3LF5h/s3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "End of Life Care",
+        "description": "Our patients are frequently among the first to benefit from breakthrough therapies, advanced technologies and clinical research trials. At Mayo Clinic, every aspect of your care is coordinated and teams of experts work together to provide exactly the care you need. What might take months elsewhere can often be done in days here.",
+        "image": "https://i.ibb.co/1G9MBmh/s4.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Alzheimer’s & Dementia Care",
+        "description": "The answer is yes for 1.3 million patients from nearly 130 countries every year. The reason is simple: Compassion is at the heart of our care. At Mayo Clinic, unhurried, comprehensive evaluations offer the best chance of healing and getting back to your life.",
+        "image": "https://i.ibb.co/bFSQ1vw/s5.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Private Duty Nursing",
+        "description": "Effective treatment depends on getting the right diagnosis as soon as possible. Our specialists collaborate across disciplines to listen to your story, evaluate your condition from every angle, and develop a diagnosis and treatment plan that's just for you",
+        "image": "https://i.ibb.co/sQRjGcx/s6.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Eldery Nutrition",
+        "description": "Mayo Clinic experts solve the world's toughest medical problems — one patient at a time. No matter what serious, complex or rare health challenge you're facing, you can be confident that Mayo Clinic has extensive experience in treating patients with your specific condition.",
+        "image": "https://i.ibb.co/2yrYgrQ/s7.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Transitional Care",
+        "description": "Our relentless research yields scientific discoveries and innovations that reach our patients faster and help them heal sooner. Our patients are frequently among the first to benefit from breakthrough therapies, advanced technologies and clinical research trials.",
+        "image": "https://i.ibb.co/R4FZcWZ/s8.jpg"
+    }
+]
+
+
+
+
+
+
+
+
+
