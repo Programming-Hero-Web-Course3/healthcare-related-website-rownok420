@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import './Service.css'
 
 const Service = ({ service }) => {
-    console.log(service);
     const { title, image, description } = service;
     return (
         <Col>

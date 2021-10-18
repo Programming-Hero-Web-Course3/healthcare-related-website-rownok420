@@ -92,7 +92,7 @@ const Contact = () => {
                                 Get In Touch
                             </h3>
                         </div>
-                        <form className="w-50 m-auto">
+                        <form className="w-50 m-auto form-style">
                             <div className="mb-3  text-start">
                                 <label className="mb-2 fw-bold ms-2">
                                     Name:
