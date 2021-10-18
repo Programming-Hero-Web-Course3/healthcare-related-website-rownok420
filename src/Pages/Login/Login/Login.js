@@ -6,8 +6,15 @@ import loginImg from "../../../images/login.png";
 import "./Login.css";
 
 const Login = () => {
-    const { signInUsingGoogle, signInUsingFacebook, signInUsingGitHub, error, handleRegister, setError, processLogin } =
-        useAuth();
+    const {
+        signInUsingGoogle,
+        signInUsingFacebook,
+        signInUsingGitHub,
+        error,
+        handleRegister,
+        registerNewUser,
+        processLogin,
+    } = useAuth();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -36,23 +43,17 @@ const Login = () => {
     const handleRegisterUser = (e) => {
         e.preventDefault();
         handleRegister(email, password, isLogin);
-
-    }
-
-    // const processOfUserLogin =
+        if (registerNewUser) {
+            history.push(redirect_uri);
+        }
+        if (processLogin) {
+            history.push(redirect_uri);
+        }
+    };
 
     const toggleLogIn = (e) => {
         setIsLogin(e.target.checked);
     };
-
-
-
-
-
-
-
-
-
 
     // google authentication
     const handleGoogleLogin = () => {
@@ -110,10 +111,13 @@ const Login = () => {
                                     className="mb-2 fw-bold"
                                     style={{ color: "#00a3c8" }}
                                 >
-                                    {isLogin ? "Login Your Account" : "Create an Account"}
+                                    {isLogin
+                                        ? "Login Your Account"
+                                        : "Create an Account"}
                                 </h2>
                                 <p className="text-muted mb-4">
-                                    {!isLogin && "Setup a new account in a minute"}
+                                    {!isLogin &&
+                                        "Setup a new account in a minute"}
                                 </p>
                             </div>
                             <div>
@@ -121,16 +125,18 @@ const Login = () => {
                                     onSubmit={handleRegisterUser}
                                     className="w-100"
                                 >
-                                    {! isLogin && <Form.Group
-                                        className="mb-3"
-                                        controlId="formBasicName"
-                                    >
-                                        <Form.Control
-                                            onBlur={handleNameChange}
-                                            type="text"
-                                            placeholder="Your name"
-                                        />
-                                    </Form.Group>}
+                                    {!isLogin && (
+                                        <Form.Group
+                                            className="mb-3"
+                                            controlId="formBasicName"
+                                        >
+                                            <Form.Control
+                                                onBlur={handleNameChange}
+                                                type="text"
+                                                placeholder="Your name"
+                                            />
+                                        </Form.Group>
+                                    )}
 
                                     <Form.Group
                                         className="mb-3"

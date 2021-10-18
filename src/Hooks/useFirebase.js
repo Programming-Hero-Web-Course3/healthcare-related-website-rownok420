@@ -6,7 +6,6 @@ import {
     GithubAuthProvider,
     onAuthStateChanged,
     signOut,
-
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     sendEmailVerification,
@@ -16,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/Firebase.init";
 
-initializeAuthentication()
+initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
@@ -27,9 +26,7 @@ const useFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
-
     const handleRegister = (email, password, isLogin) => {
-
         if (password.length < 6) {
             setError("Password must be at least 6 characters long");
             return;
@@ -71,30 +68,16 @@ const useFirebase = () => {
             });
     };
 
-
-
-
-
-
-
-
-
-
-
-
     const signInUsingGoogle = () => {
-       return signInWithPopup(auth, googleProvider)
-
+        return signInWithPopup(auth, googleProvider);
     };
 
     const signInUsingFacebook = () => {
-        return signInWithPopup(auth, facebookProvider)
-
+        return signInWithPopup(auth, facebookProvider);
     };
 
     const signInUsingGitHub = () => {
-        return signInWithPopup(auth, gitHubProvider)
-        
+        return signInWithPopup(auth, gitHubProvider);
     };
 
     const logOut = () => {
@@ -126,6 +109,7 @@ const useFirebase = () => {
         error,
         setError,
         processLogin,
+        registerNewUser,
 
         handleRegister,
     };
