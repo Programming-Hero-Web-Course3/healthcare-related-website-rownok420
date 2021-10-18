@@ -11,7 +11,7 @@ const Care = () => {
                 <Row>
                     <Col sm={12} md={6}>
                         <div>
-                            <img className="img-fluid mt-4" src={sideImg} alt="" />
+                            <img className="img-fluid mt-4 mb-5" src={sideImg} alt="" />
                         </div>
                     </Col>
                     <Col sm={12} md={6}>
