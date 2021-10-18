@@ -5,7 +5,8 @@ import loginImg from "../../../images/login.png";
 import "./Login.css";
 
 const Login = () => {
-    const {signInUsingGoogle, signInUsingFacebook, signInUsingGitHub} = useAuth();
+    const { signInUsingGoogle, signInUsingFacebook, signInUsingGitHub } =
+        useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -148,7 +149,9 @@ const Login = () => {
                                 </Form>
                             </div>
                             <div className="mt-4 mb-5 text-center">
-                                <small>or register with</small>
+                                <small style={{ color: "#00a3c8" }}>
+                                    or register with
+                                </small>
                                 <div className="mt-4">
                                     <i
                                         role="button"
@@ -161,11 +164,6 @@ const Login = () => {
                                         style={{ color: "#1877f2" }}
                                         onClick={handleFacebookLogin}
                                         className="fab fab-icon fa-2x fa-facebook"
-                                    ></i>
-                                    <i
-                                        role="button"
-                                        style={{ color: "#1877f2" }}
-                                        className="fab fab-icon fa-2x fa-twitter"
                                     ></i>
                                     <i
                                         role="button"
