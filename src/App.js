@@ -8,6 +8,7 @@ import Login from "./Pages/Login/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Appointment from "./Pages/Appointment/Appointment";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                             <NotFound />
                         </Route>
                     </Switch>
+                    <Footer />
                 </Router>
             </AuthProvider>
         </div>
