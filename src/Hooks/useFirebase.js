@@ -124,6 +124,8 @@ const useFirebase = () => {
         signInUsingGitHub,
         logOut,
         error,
+        setError,
+        processLogin,
 
         handleRegister,
     };

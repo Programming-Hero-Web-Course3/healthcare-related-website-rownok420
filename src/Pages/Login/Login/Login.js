@@ -110,10 +110,10 @@ const Login = () => {
                                     className="mb-2 fw-bold"
                                     style={{ color: "#00a3c8" }}
                                 >
-                                    Create an Account
+                                    {isLogin ? "Login Your Account" : "Create an Account"}
                                 </h2>
                                 <p className="text-muted mb-4">
-                                    Setup a new account in a minute
+                                    {!isLogin && "Setup a new account in a minute"}
                                 </p>
                             </div>
                             <div>
@@ -121,7 +121,7 @@ const Login = () => {
                                     onSubmit={handleRegisterUser}
                                     className="w-100"
                                 >
-                                    <Form.Group
+                                    {! isLogin && <Form.Group
                                         className="mb-3"
                                         controlId="formBasicName"
                                     >
@@ -130,7 +130,7 @@ const Login = () => {
                                             type="text"
                                             placeholder="Your name"
                                         />
-                                    </Form.Group>
+                                    </Form.Group>}
 
                                     <Form.Group
                                         className="mb-3"
@@ -193,7 +193,7 @@ const Login = () => {
                                         className="login-btn rounded-2"
                                         type="submit"
                                     >
-                                        Register
+                                        {isLogin ? "Login" : "Register"}
                                     </button>
                                 </Form>
                             </div>
