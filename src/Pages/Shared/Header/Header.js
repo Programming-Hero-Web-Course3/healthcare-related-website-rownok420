@@ -37,7 +37,7 @@ const Header = () => {
                         </NavLink>
                         <NavLink activeStyle={activeStyle} to="/about">
                             About us
-                        </NavLink>                             
+                        </NavLink>
                         <NavLink activeStyle={activeStyle} to="/department">
                             Our Department
                         </NavLink>
@@ -70,18 +70,22 @@ const Header = () => {
                         </div>
                     )}
 
+                    {user.photoURL && (
+                        <Navbar.Brand>
+                            <img
+                                src={user.photoURL}
+                                width="35"
+                                height="35"
+                                className="d-inline-block align-top rounded-circle m-2 me-0"
+                                alt=""
+                            />
+                        </Navbar.Brand>
+                    )}
+
                     {user.email && (
-                        <div>
-                            <Navbar.Brand>
-                                <img
-                                    src={user.photoURL}
-                                    width="35"
-                                    height="35"
-                                    className="d-inline-block align-top rounded-circle m-2 me-0"
-                                    alt=""
-                                />
-                            </Navbar.Brand>
-                        </div>
+                        <Navbar.Brand className="name-style py-0 text-white">
+                            <h6>{user.displayName}</h6>
+                        </Navbar.Brand>
                     )}
                 </Navbar.Collapse>
             </Container>

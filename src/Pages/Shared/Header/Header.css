@@ -7,7 +7,7 @@
     padding: 15px 0px;
 }
 
-nav a {
+nav a, .name-style {
     color: white;
     text-decoration: none;
     margin: 10px;

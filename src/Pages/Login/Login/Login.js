@@ -11,6 +11,7 @@ const Login = () => {
         signInUsingFacebook,
         signInUsingGitHub,
         error,
+        setError,
         handleRegister,
         registerNewUser,
         processLogin,
@@ -42,17 +43,19 @@ const Login = () => {
 
     const handleRegisterUser = (e) => {
         e.preventDefault();
-        handleRegister(email, password, isLogin);
+        handleRegister(email, password, name, isLogin);
         if (registerNewUser) {
             history.push(redirect_uri);
         }
         if (processLogin) {
             history.push(redirect_uri);
         }
+       
     };
 
     const toggleLogIn = (e) => {
         setIsLogin(e.target.checked);
+        setError('')
     };
 
     // google authentication

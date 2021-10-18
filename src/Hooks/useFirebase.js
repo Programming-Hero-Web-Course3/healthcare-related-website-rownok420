@@ -26,7 +26,7 @@ const useFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
-    const handleRegister = (email, password, isLogin) => {
+    const handleRegister = (email, password, name, isLogin) => {
         if (password.length < 6) {
             setError("Password must be at least 6 characters long");
             return;
@@ -39,7 +39,7 @@ const useFirebase = () => {
 
         isLogin
             ? processLogin(email, password)
-            : registerNewUser(email, password);
+            : registerNewUser(email, password, name);
     };
 
     const processLogin = (email, password) => {
@@ -54,19 +54,47 @@ const useFirebase = () => {
             });
     };
 
-    const registerNewUser = (email, password) => {
+    const registerNewUser = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
                 setError("");
                 // verifyEmail();
-                // setUserName();
+                setUserName(name);
             })
             .catch((error) => {
                 setError(error.message);
             });
     };
+
+
+    const setUserName = (name) => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(() => {})
+            .catch((error) => {
+                setError(error.message);
+            });
+    };
+
+    // const verifyEmail = () => {
+    //     sendEmailVerification(auth.currentUser)
+    //         .then(() => {})
+    //         .catch((err) => {
+    //             setError(err.message);
+    //         });
+    // };
+
+    // const handleResetPassword = () => {
+    //     sendPasswordResetEmail(auth, email)
+    //         .then(() => {})
+    //         .catch((err) => {
+    //             setError(err.message);
+    //         });
+    // };
+
+
+
 
     const signInUsingGoogle = () => {
         return signInWithPopup(auth, googleProvider);
@@ -110,7 +138,6 @@ const useFirebase = () => {
         setError,
         processLogin,
         registerNewUser,
-
         handleRegister,
     };
 };
