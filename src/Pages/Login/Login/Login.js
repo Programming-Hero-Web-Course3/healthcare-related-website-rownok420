@@ -61,7 +61,7 @@ const Login = () => {
                             <div>
                                 <h2
                                     className="mb-2 fw-bold"
-                                    style={{ color: "#1c63b8" }}
+                                    style={{ color: "#00a3c8" }}
                                 >
                                     Create an Account
                                 </h2>
@@ -119,7 +119,7 @@ const Login = () => {
                                         >
                                             <Form.Check
                                                 // onClick={toggleLogIn}
-                                                style={{ color: "#1c63b8" }}
+                                                style={{ color: "#00a3c8" }}
                                                 type="checkbox"
                                                 label="Already register"
                                             />

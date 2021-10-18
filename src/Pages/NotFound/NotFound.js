@@ -14,7 +14,7 @@ const NotFound = () => {
                 <img src={img} className='w-50 p-5 notFound-img' alt="" />
             </div>
             <Link to="/home">
-                <button className="my-btn">Go to Home</button>
+                <button className="home-button">Go to Home</button>
             </Link>
         </div>
         </div>
