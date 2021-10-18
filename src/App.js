@@ -11,6 +11,7 @@ import Appointment from "./Pages/Appointment/Appointment";
 import Footer from "./Pages/Shared/Footer/Footer";
 import About from "./Pages/About/About/About";
 import Department from "./Pages/Department/Department/Department";
+import Contact from "./Pages/Contact/Contact";
 
 function App() {
     return (
@@ -34,6 +35,9 @@ function App() {
                         <PrivateRoute exact path="/appointment">
                             <Appointment />
                         </PrivateRoute>
+                        <Route exact path="/contact">
+                            <Contact />
+                        </Route>
                         <Route exact path="/login">
                             <Login />
                         </Route>
