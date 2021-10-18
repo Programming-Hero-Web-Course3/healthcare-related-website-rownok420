@@ -133,14 +133,14 @@ const Contact = () => {
                                 <button
                                     type="submit"
                                     onClick={(e) => e.preventDefault()}
-                                    className="my-btn m-2"
+                                    className="home-button m-2"
                                 >
                                     Submit
                                 </button>
                                 <button
                                     type="reset"
                                     onClick={(e) => e.preventDefault()}
-                                    className="my-btn m-2"
+                                    className="home-button m-2"
                                 >
                                     Reset
                                 </button>
