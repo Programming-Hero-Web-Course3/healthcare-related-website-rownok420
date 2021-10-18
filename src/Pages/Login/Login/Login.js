@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import useAuth from "../../../Hooks/useAuth";
@@ -5,13 +6,55 @@ import loginImg from "../../../images/login.png";
 import "./Login.css";
 
 const Login = () => {
-    const { signInUsingGoogle, signInUsingFacebook, signInUsingGitHub } =
+    const { signInUsingGoogle, signInUsingFacebook, signInUsingGitHub, error, handleRegister, setError, processLogin } =
         useAuth();
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLogin, setIsLogin] = useState(false);
 
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || "/home";
 
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        console.log(e.target.value);
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        console.log(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+        console.log(e.target.value);
+    };
+
+    const handleRegisterUser = (e) => {
+        e.preventDefault();
+        handleRegister(email, password, isLogin);
+
+    }
+
+    // const processOfUserLogin =
+
+    const toggleLogIn = (e) => {
+        setIsLogin(e.target.checked);
+    };
+
+
+
+
+
+
+
+
+
+
+    // google authentication
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then((result) => {
@@ -23,6 +66,7 @@ const Login = () => {
             });
     };
 
+    // facebook authentication
     const handleFacebookLogin = () => {
         signInUsingFacebook()
             .then((result) => {
@@ -33,6 +77,8 @@ const Login = () => {
                 console.log(err.message);
             });
     };
+
+    // github authentication
     const handleGithubLogin = () => {
         signInUsingGitHub()
             .then((result) => {
@@ -71,13 +117,16 @@ const Login = () => {
                                 </p>
                             </div>
                             <div>
-                                <Form className="w-100">
+                                <Form
+                                    onSubmit={handleRegisterUser}
+                                    className="w-100"
+                                >
                                     <Form.Group
                                         className="mb-3"
                                         controlId="formBasicName"
                                     >
                                         <Form.Control
-                                            // onBlur={handleNameChange}
+                                            onBlur={handleNameChange}
                                             type="text"
                                             placeholder="Your name"
                                         />
@@ -88,7 +137,7 @@ const Login = () => {
                                         controlId="formBasicEmail"
                                     >
                                         <Form.Control
-                                            // onBlur={handleEmailChange}
+                                            onBlur={handleEmailChange}
                                             type="email"
                                             placeholder="Email address"
                                             required
@@ -104,22 +153,22 @@ const Login = () => {
                                         controlId="formBasicPassword"
                                     >
                                         <Form.Control
-                                            // onBlur={handlePasswordChange}
+                                            onBlur={handlePasswordChange}
                                             type="password"
                                             placeholder="Password"
                                             required
                                         />
                                     </Form.Group>
-                                    {/* <div>
+                                    <div>
                                         <p className="text-warning">{error}</p>
-                                    </div> */}
+                                    </div>
                                     <div className="d-flex justify-content-between">
                                         <Form.Group
                                             className="mb-3"
                                             controlId="formBasicCheckbox"
                                         >
                                             <Form.Check
-                                                // onClick={toggleLogIn}
+                                                onClick={toggleLogIn}
                                                 style={{ color: "#00a3c8" }}
                                                 type="checkbox"
                                                 label="Already register"
