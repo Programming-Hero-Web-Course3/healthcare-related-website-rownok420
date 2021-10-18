@@ -70,7 +70,7 @@ const Header = () => {
                         </div>
                     )}
 
-                    {user.photoURL && (
+                    {user?.photoURL && (
                         <Navbar.Brand>
                             <img
                                 src={user.photoURL}
@@ -82,7 +82,7 @@ const Header = () => {
                         </Navbar.Brand>
                     )}
 
-                    {user.email && (
+                    {user?.email && (
                         <Navbar.Brand className="name-style py-0 text-white">
                             <h6>{user.displayName}</h6>
                         </Navbar.Brand>

@@ -43,6 +43,7 @@ const Login = () => {
 
     const handleRegisterUser = (e) => {
         e.preventDefault();
+        
         handleRegister(email, password, name, isLogin);
         if (registerNewUser) {
             history.push(redirect_uri);
@@ -137,6 +138,7 @@ const Login = () => {
                                                 onBlur={handleNameChange}
                                                 type="text"
                                                 placeholder="Your name"
+                                                required
                                             />
                                         </Form.Group>
                                     )}
