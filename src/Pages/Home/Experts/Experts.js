@@ -11,7 +11,7 @@ const Experts = () => {
         <div className="my-5">
             <Container>
                 <div className="text-center">
-                    <h1 style={{color: '#00a3c8'}}>Meet Our Team</h1>
+                    <h1 style={{color: '#00a3c8'}}>MEET OUR TEAM</h1>
                     <p className='mt-3 mb-5'>
                         Our commitment to you is to provide honest, friendly,
                         and on-time service. Visit a locally owned and operated
