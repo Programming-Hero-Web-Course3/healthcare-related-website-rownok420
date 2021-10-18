@@ -9,6 +9,7 @@ import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Appointment from "./Pages/Appointment/Appointment";
 import Footer from "./Pages/Shared/Footer/Footer";
+import About from "./Pages/About/About/About";
 
 function App() {
     return (
@@ -22,6 +23,9 @@ function App() {
                         </Route>
                         <Route exact path="/home">
                             <Home />
+                        </Route>
+                        <Route exact path="/about">
+                            <About />
                         </Route>
                         <PrivateRoute exact path="/appointment">
                             <Appointment />
