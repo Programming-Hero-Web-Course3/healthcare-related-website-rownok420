@@ -14,7 +14,7 @@ const Header = () => {
     };
     return (
         <Navbar className="nav-style" expand="lg">
-            <Container>
+            <Container fluid>
                 <Navbar.Brand>
                     <NavLink to="/">
                         <img

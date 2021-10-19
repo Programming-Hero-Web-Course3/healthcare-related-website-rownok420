@@ -12,7 +12,7 @@ const Subscribe = () => {
                 <div className='w-50 mx-auto my-5 form-style'>
                     <InputGroup className="mb-3">
                         <FormControl
-                            placeholder="subscribe now"
+                            placeholder="Enter your email"
                             aria-label="Recipient's username"
                             aria-describedby="basic-addon2"
                             className='p-2'
