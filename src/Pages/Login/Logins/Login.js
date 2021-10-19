@@ -36,8 +36,8 @@ const Login = () => {
         e.preventDefault();
         processLogin(email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
                 setError("");
                 history.push(redirect_uri);
             })
@@ -51,10 +51,11 @@ const Login = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -64,10 +65,11 @@ const Login = () => {
     const handleFacebookLogin = () => {
         signInUsingFacebook()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -77,10 +79,11 @@ const Login = () => {
     const handleGithubLogin = () => {
         signInUsingGitHub()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));

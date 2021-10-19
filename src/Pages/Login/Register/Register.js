@@ -47,8 +47,8 @@ const Register = () => {
         e.preventDefault();
         registerNewUser(email, password, name)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
                 setError("");
                 setUserName(name, photo);
                 history.push(redirect_uri);
@@ -63,10 +63,11 @@ const Register = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -76,10 +77,11 @@ const Register = () => {
     const handleFacebookLogin = () => {
         signInUsingFacebook()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -89,10 +91,11 @@ const Register = () => {
     const handleGithubLogin = () => {
         signInUsingGitHub()
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 history.push(redirect_uri);
             })
             .catch((err) => {
+                setError(err.message)
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -170,7 +173,7 @@ const Register = () => {
                                     </Form.Group>
                                     <Form.Group
                                         className="mb-3"
-                                        controlId="formBasicName"
+                                        controlId="formBasicPhoto"
                                     >
                                         <Form.Control
                                             onBlur={handlePhotoUrl}
