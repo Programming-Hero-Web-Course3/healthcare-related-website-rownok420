@@ -26,22 +26,21 @@ const useFirebase = () => {
     const facebookProvider = new FacebookAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
-
     const processLogin = (email, password) => {
-        setIsLoading(true)
-        return signInWithEmailAndPassword(auth, email, password)
-            
+        setIsLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
     };
 
     const registerNewUser = (email, password) => {
-        setIsLoading(true)
-        return createUserWithEmailAndPassword(auth, email, password)
-            
+        setIsLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     };
 
-
-    const setUserName = (name) => {
-        updateProfile(auth.currentUser, { displayName: name })
+    const setUserName = (name, photo) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo,
+        })
             .then(() => {})
             .catch((error) => {
                 setError(error.message);
@@ -49,22 +48,22 @@ const useFirebase = () => {
     };
 
     const signInUsingGoogle = () => {
-        setIsLoading(true)
+        setIsLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
 
     const signInUsingFacebook = () => {
-        setIsLoading(true)
+        setIsLoading(true);
         return signInWithPopup(auth, facebookProvider);
     };
 
     const signInUsingGitHub = () => {
-        setIsLoading(true)
+        setIsLoading(true);
         return signInWithPopup(auth, gitHubProvider);
     };
 
     const logOut = () => {
-        setIsLoading(true)
+        setIsLoading(true);
         signOut(auth)
             .then(() => {
                 setUser({});
@@ -82,7 +81,7 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
-            setIsLoading(false)
+            setIsLoading(false);
         });
     }, [auth]);
 

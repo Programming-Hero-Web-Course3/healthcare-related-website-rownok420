@@ -21,6 +21,7 @@ const Login = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [photo, setPhoto] = useState("");
 
     const location = useLocation();
     const history = useHistory();
@@ -38,6 +39,10 @@ const Login = () => {
         setPassword(e.target.value);
     };
 
+    const handlePhotoUrl = (e) => {
+        setPhoto(e.target.value);
+    };
+
     const handleRegisterUser = (e) => {
         e.preventDefault();
         registerNewUser(email, password, name)
@@ -45,7 +50,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setError("");
-                setUserName(name);
+                setUserName(name, photo);
                 history.push(redirect_uri);
             })
             .catch((error) => {
@@ -160,6 +165,17 @@ const Login = () => {
                                             onBlur={handlePasswordChange}
                                             type="password"
                                             placeholder="Password"
+                                            required
+                                        />
+                                    </Form.Group>
+                                    <Form.Group
+                                        className="mb-3"
+                                        controlId="formBasicName"
+                                    >
+                                        <Form.Control
+                                            onBlur={handlePhotoUrl}
+                                            type="text"
+                                            placeholder="Photo url"
                                             required
                                         />
                                     </Form.Group>
