@@ -14,6 +14,7 @@ const Register = () => {
         error,
         setError,
         processLogin,
+        setIsLoading,
     } = useAuth();
 
     const [email, setEmail] = useState("");
@@ -42,7 +43,8 @@ const Register = () => {
             })
             .catch((error) => {
                 setError(error.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // google authentication
@@ -54,7 +56,8 @@ const Register = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // facebook authentication
@@ -66,7 +69,8 @@ const Register = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // github authentication
@@ -78,7 +82,8 @@ const Register = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     return (
@@ -148,7 +153,7 @@ const Register = () => {
                                             controlId="formBasicCheckbox"
                                         >
                                             <Link to="/login">
-                                                <p>
+                                                <p style={{ color: "#00a3c8" }}>
                                                     Create new account? Register
                                                 </p>
                                             </Link>

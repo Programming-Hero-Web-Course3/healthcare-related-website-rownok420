@@ -15,6 +15,7 @@ const Login = () => {
         setError,
         registerNewUser,
         setUserName,
+        setIsLoading,
     } = useAuth();
 
     const [name, setName] = useState("");
@@ -49,7 +50,8 @@ const Login = () => {
             })
             .catch((error) => {
                 setError(error.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // google authentication
@@ -61,7 +63,8 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // facebook authentication
@@ -73,7 +76,8 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     // github authentication
@@ -85,7 +89,8 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     return (
@@ -167,7 +172,7 @@ const Login = () => {
                                             controlId="formBasicCheckbox"
                                         >
                                             <Link to="/register">
-                                                <p>All ready register? Login</p>
+                                                <p style={{ color: "#00a3c8" }}>Allready register? Login</p>
                                             </Link>
                                         </Form.Group>
                                     </div>

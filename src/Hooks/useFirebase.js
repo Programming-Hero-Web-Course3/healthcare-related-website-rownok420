@@ -19,35 +19,22 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
 
+    const [isLoading, setIsLoading] = useState(true);
+
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
-    // const handleRegister = (email, password, name, isLogin) => {
-    //     if (password.length < 6) {
-    //         setError("Password must be at least 6 characters long");
-    //         return;
-    //     }
-
-    //     if (!/(?=.[A-Z].*[A-Z])/.test(password)) {
-    //         setError("Password must contain 2 uppercase");
-    //         return;
-    //     }
-
-    //     isLogin
-    //         ? processLogin(email, password)
-    //         : registerNewUser(email, password, name);
-    // };
-
 
     const processLogin = (email, password) => {
-        
+        setIsLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
             
     };
 
     const registerNewUser = (email, password) => {
+        setIsLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
             
     };
@@ -62,25 +49,30 @@ const useFirebase = () => {
     };
 
     const signInUsingGoogle = () => {
+        setIsLoading(true)
         return signInWithPopup(auth, googleProvider);
     };
 
     const signInUsingFacebook = () => {
+        setIsLoading(true)
         return signInWithPopup(auth, facebookProvider);
     };
 
     const signInUsingGitHub = () => {
+        setIsLoading(true)
         return signInWithPopup(auth, gitHubProvider);
     };
 
     const logOut = () => {
+        setIsLoading(true)
         signOut(auth)
             .then(() => {
                 setUser({});
             })
             .catch((err) => {
                 setError(err.message);
-            });
+            })
+            .finally(() => setIsLoading(false));
     };
 
     useEffect(() => {
@@ -90,6 +82,7 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
+            setIsLoading(false)
         });
     }, [auth]);
 
@@ -104,6 +97,8 @@ const useFirebase = () => {
         processLogin,
         registerNewUser,
         setUserName,
+        isLoading,
+        setIsLoading,
     };
 };
 
