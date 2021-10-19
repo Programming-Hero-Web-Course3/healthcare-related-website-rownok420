@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import img from '../../../images/about.jpg'
+import Subscribe from '../Subscribe/Subscribe';
 import './About.css'
 
 const About = () => {
@@ -98,6 +99,7 @@ const About = () => {
                         </div>
                     </Col>
                 </Row>
+                <Subscribe />
             </Container>
         </div>
     );
