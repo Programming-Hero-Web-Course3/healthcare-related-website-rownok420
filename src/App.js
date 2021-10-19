@@ -13,6 +13,7 @@ import About from "./Pages/About/About/About";
 import Department from "./Pages/Department/Department/Department";
 import Contact from "./Pages/Contact/Contact";
 import Details from "./Pages/Home/Details/Details";
+import Register from "./Pages/Login/Register/Register";
 
 function App() {
     return (
@@ -44,6 +45,9 @@ function App() {
                         </Route>
                         <Route exact path="/login">
                             <Login />
+                        </Route>
+                        <Route exact path="/register">
+                            <Register />
                         </Route>
                         <Route exact path="*">
                             <NotFound />

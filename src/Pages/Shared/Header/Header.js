@@ -73,7 +73,7 @@ const Header = () => {
                     {user?.photoURL && (
                         <Navbar.Brand>
                             <img
-                                src={user.photoURL}
+                                src={user?.photoURL}
                                 width="35"
                                 height="35"
                                 className="d-inline-block align-top rounded-circle m-2 me-0"
@@ -84,7 +84,7 @@ const Header = () => {
 
                     {user?.email && (
                         <Navbar.Brand className="name-style py-0 text-white">
-                            <h6>{user.displayName}</h6>
+                            <h6>{user?.displayName}</h6>
                         </Navbar.Brand>
                     )}
                 </Navbar.Collapse>

@@ -1,33 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import loginImg from "../../../images/login.png";
-import "./Login.css";
+import "./Register.css";
 
-const Login = () => {
+const Register = () => {
     const {
         signInUsingGoogle,
         signInUsingFacebook,
         signInUsingGitHub,
         error,
         setError,
-        registerNewUser,
-        setUserName,
+        processLogin,
     } = useAuth();
 
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || "/home";
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -39,12 +33,11 @@ const Login = () => {
 
     const handleRegisterUser = (e) => {
         e.preventDefault();
-        registerNewUser(email, password, name)
+        processLogin(email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
                 setError("");
-                setUserName(name);
                 history.push(redirect_uri);
             })
             .catch((error) => {
@@ -108,10 +101,10 @@ const Login = () => {
                                     className="mb-2 fw-bold"
                                     style={{ color: "#00a3c8" }}
                                 >
-                                    Create an Account
+                                    Login Your Account
                                 </h2>
                                 <p className="text-muted mb-4">
-                                    Setup a new account in a minute
+                                    Setup your account in a minute
                                 </p>
                             </div>
                             <div>
@@ -119,18 +112,6 @@ const Login = () => {
                                     onSubmit={handleRegisterUser}
                                     className="w-100"
                                 >
-                                    <Form.Group
-                                        className="mb-3"
-                                        controlId="formBasicName"
-                                    >
-                                        <Form.Control
-                                            onBlur={handleNameChange}
-                                            type="text"
-                                            placeholder="Your name"
-                                            required
-                                        />
-                                    </Form.Group>
-
                                     <Form.Group
                                         className="mb-3"
                                         controlId="formBasicEmail"
@@ -166,8 +147,10 @@ const Login = () => {
                                             className="mb-3"
                                             controlId="formBasicCheckbox"
                                         >
-                                            <Link to="/register">
-                                                <p>All ready register? Login</p>
+                                            <Link to="/login">
+                                                <p>
+                                                    Create new account? Register
+                                                </p>
                                             </Link>
                                         </Form.Group>
                                     </div>
@@ -175,14 +158,14 @@ const Login = () => {
                                         className="login-btn rounded-2"
                                         type="submit"
                                     >
-                                        Register
+                                        Login
                                     </button>
                                 </Form>
                             </div>
 
                             <div className="mt-4 mb-5 text-center">
                                 <small style={{ color: "#00a3c8" }}>
-                                    or register with
+                                    or login with
                                 </small>
                                 <div className="mt-4">
                                     <i
@@ -212,4 +195,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
