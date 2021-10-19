@@ -51,7 +51,7 @@ const Header = () => {
 
                     {user.email ? (
                         <div>
-                            <NavLink to="/login">
+                            <NavLink to="/register">
                                 <button
                                     onClick={logOut}
                                     className="rounded-pill login-btn"
@@ -62,7 +62,7 @@ const Header = () => {
                         </div>
                     ) : (
                         <div>
-                            <NavLink to="/login">
+                            <NavLink to="/register">
                                 <button className="rounded-pill login-btn">
                                     Login
                                 </button>
