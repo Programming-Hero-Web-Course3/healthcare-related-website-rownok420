@@ -84,7 +84,7 @@ const Header = () => {
 
                     {user?.email && (
                         <Navbar.Brand className="name-style py-0 text-white">
-                            <h6>{user?.displayName}</h6>
+                            <h6>{user?.email.substring(0, user.email.lastIndexOf("@"))}</h6>
                         </Navbar.Brand>
                     )}
                 </Navbar.Collapse>
