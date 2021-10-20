@@ -2,7 +2,6 @@ import {
     getAuth,
     signInWithPopup,
     GoogleAuthProvider,
-    FacebookAuthProvider,
     GithubAuthProvider,
     onAuthStateChanged,
     signOut,
@@ -23,7 +22,6 @@ const useFirebase = () => {
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
-    const facebookProvider = new FacebookAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
     const processLogin = (email, password) => {
@@ -52,11 +50,7 @@ const useFirebase = () => {
         return signInWithPopup(auth, googleProvider);
     };
 
-    const signInUsingFacebook = () => {
-        setIsLoading(true);
-        return signInWithPopup(auth, facebookProvider);
-    };
-
+    
     const signInUsingGitHub = () => {
         setIsLoading(true);
         return signInWithPopup(auth, gitHubProvider);
@@ -88,7 +82,6 @@ const useFirebase = () => {
     return {
         user,
         signInUsingGoogle,
-        signInUsingFacebook,
         signInUsingGitHub,
         logOut,
         error,

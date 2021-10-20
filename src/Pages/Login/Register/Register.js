@@ -9,7 +9,6 @@ import "./Register.css";
 const Register = () => {
     const {
         signInUsingGoogle,
-        signInUsingFacebook,
         signInUsingGitHub,
         error,
         setError,
@@ -67,21 +66,7 @@ const Register = () => {
                 history.push(redirect_uri);
             })
             .catch((err) => {
-                setError(err.message)
-                console.log(err.message);
-            })
-            .finally(() => setIsLoading(false));
-    };
-
-    // facebook authentication
-    const handleFacebookLogin = () => {
-        signInUsingFacebook()
-            .then((result) => {
-                // console.log(result.user);
-                history.push(redirect_uri);
-            })
-            .catch((err) => {
-                setError(err.message)
+                setError(err.message);
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -95,7 +80,7 @@ const Register = () => {
                 history.push(redirect_uri);
             })
             .catch((err) => {
-                setError(err.message)
+                setError(err.message);
                 console.log(err.message);
             })
             .finally(() => setIsLoading(false));
@@ -167,7 +152,7 @@ const Register = () => {
                                         <Form.Control
                                             onBlur={handlePasswordChange}
                                             type="password"
-                                            placeholder="Password"
+                                            placeholder="Password at lest 6 characters"
                                             required
                                         />
                                     </Form.Group>
@@ -190,8 +175,16 @@ const Register = () => {
                                             className="mb-3"
                                             controlId="formBasicCheckbox"
                                         >
-                                            <Link to="/login">
-                                                <p style={{ color: "#00a3c8" }}>Allready register? Login</p>
+                                            <Link
+                                                to="/login"
+                                                style={{
+                                                    textDecoration: "none",
+                                                }}
+                                            >
+                                                <p style={{ color: "#00a3c8" }}>
+                                                    Already have an account?
+                                                    Login Now
+                                                </p>
                                             </Link>
                                         </Form.Group>
                                     </div>
@@ -211,15 +204,9 @@ const Register = () => {
                                 <div className="mt-4">
                                     <i
                                         role="button"
-                                        style={{ color: "#EB4233" }}
+                                        style={{ color: "#00a3c8" }}
                                         onClick={handleGoogleLogin}
                                         className="fab fab-icon fa-2x fa-google"
-                                    ></i>
-                                    <i
-                                        role="button"
-                                        style={{ color: "#1877f2" }}
-                                        onClick={handleFacebookLogin}
-                                        className="fab fab-icon fa-2x fa-facebook"
                                     ></i>
                                     <i
                                         role="button"

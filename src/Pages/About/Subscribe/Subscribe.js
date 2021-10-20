@@ -4,10 +4,10 @@ import './Subscribe.css'
 
 const Subscribe = () => {
     return (
-        <div className='my-5'>
-            <div className="text-center py-5 card-style">
+        <div className='py-5'>
+            <div className="text-center pt-5 pb-4 card-style">
                 <div>
-                    <h1 style={{color: "#00a3c8"}}>Subscribe Our News Latter</h1>
+                    <h1 style={{color: "#00a3c8"}}>Subscribe To Our NewsLetter !</h1>
                 </div>
                 <div className='w-50 mx-auto my-5 form-style'>
                     <InputGroup className="mb-3">

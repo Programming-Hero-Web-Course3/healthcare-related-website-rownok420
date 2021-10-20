@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Subscribe from "../../About/Subscribe/Subscribe";
 import DepartCard from "../DepartCard/DepartCard";
 import "./Department.css";
 
@@ -19,6 +20,9 @@ const Department = () => {
                 </div>
             </div>
             <DepartCard />
+            <div className="container">
+                <Subscribe />
+            </div>
         </div>
     );
 };

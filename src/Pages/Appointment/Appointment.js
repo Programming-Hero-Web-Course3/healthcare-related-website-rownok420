@@ -1,16 +1,17 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Appointment.css";
-import img from '../../images/appointment.png'
+import img from "../../images/appointment.png";
+import Subscribe from "../About/Subscribe/Subscribe";
 
 const Appointment = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: "#f3f2f0" }}>
             <Container>
                 <Row>
                     <Col sm={12} lg={6}>
                         <div>
-                            <img className='w-100 mt-5' src={img} alt="" />
+                            <img className="w-100 mt-5" src={img} alt="" />
                         </div>
                     </Col>
                     <Col sm={12} lg={6}>
@@ -124,6 +125,9 @@ const Appointment = () => {
                         </div>
                     </Col>
                 </Row>
+                <div>
+                    <Subscribe />
+                </div>
             </Container>
         </div>
     );

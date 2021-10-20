@@ -7,7 +7,7 @@ import './About.css'
 
 const About = () => {
     return (
-        <div className="my-5">
+        <div className="mt-5">
             <Container>
                 <Row>
                     <Col xs={12} md={6}>

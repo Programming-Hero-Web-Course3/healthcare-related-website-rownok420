@@ -71,12 +71,12 @@ const Header = () => {
                     )}
 
                     {user?.photoURL && (
-                        <Navbar.Brand>
+                        <Navbar.Brand style={{marginRight: "0px"}}>
                             <img
                                 src={user?.photoURL}
                                 width="35"
                                 height="35"
-                                className="d-inline-block align-top rounded-circle m-2 me-0"
+                                className="d-inline-block align-top rounded-circle"
                                 alt=""
                             />
                         </Navbar.Brand>
