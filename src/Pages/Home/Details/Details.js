@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Appointment from "../../Appointment/Appointment";
 
 const Details = () => {
     const { detailsId } = useParams();
@@ -16,38 +17,50 @@ const Details = () => {
     }, [detailsId]);
 
     const allDetails = details.filter((td) => td.id == detailsId);
-    console.log(allDetails);
 
     return (
-        <Row>
-            <Container>
-                <Col sm={12} lg={4}><div></div></Col>
-                <Col className='my-5 mx-auto' sm={12} lg={4}>
-                    <Card className="h-100 card-style">
-                        <div className="img-container">
-                            <Card.Img
-                                className="p-3 card-img"
-                                variant="top"
-                                src={allDetails[0]?.image}
-                            />
+        <div style={{ backgroundColor: "#f3f2f0" }}>
+            <Row>
+                <Container>
+                    <Col>
+                        <div className="container my-5">
+                            <div className="card mb-3 w-100 h-100 card-style p-4">
+                                <div className="row g-4">
+                                    <div className="col-md-4">
+                                        <div>
+                                            <img
+                                                src={allDetails[0]?.image}
+                                                className="img-fluid rounded"
+                                                alt="..."
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="card-body">
+                                            <h5 className="card-title">
+                                                {allDetails[0]?.title}
+                                            </h5>
+                                            <p className="card-text">
+                                                {allDetails[0]?.description}
+                                            </p>
+                                            <div className='mt-auto'>
+                                                <Link to="/home">
+                                                    <button className="home-button">
+                                                        {" "}
+                                                        Back home
+                                                    </button>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <Card.Body>
-                            <Card.Title>{allDetails[0]?.title}</Card.Title>
-                            <Card.Text>{allDetails[0]?.description}</Card.Text>
-                        </Card.Body>
-                        <Card.Footer className="text-center mb-2">
-                            <Link to="/home">
-                                <button className="home-button">
-                                    {" "}
-                                    Back home
-                                </button>
-                            </Link>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col sm={12} lg={4}><div></div></Col>
-            </Container>
-        </Row>
+                    </Col>
+                </Container>
+            </Row>
+            <Appointment />
+        </div>
     );
 };
 
